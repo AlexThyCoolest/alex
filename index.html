@@ -1,72 +1,385 @@
+
+<?
+$email = $_REQUEST['email'] ;
+$mail_to_send_to = "alexagboolacodes@gmail.com";
+$from_email = $email;
+$sendflag = $_REQUEST['sendflag'];    
+$name=$_REQUEST['name'];
+if ( $sendflag == "send" )
+        {
+                $subject= "Portfolio Message :D";
+                $message= "\r\n" . "Name: $name" . "\r\n"; //get recipient name in contact form
+                $message = $message.$_REQUEST['message'] . "\r\n" ;//add message from the contact form to existing message(name of the client)
+                $headers = "From: $from_email" . "\r\n" . "Reply-To: $email"  ;
+                $a = mail( $mail_to_send_to, $subject, $message, $headers );
+                if ($a)
+                {
+                     print("Message was sent, you can send another one");
+                } else {
+                     print("Message wasn't sent, please check that you have changed emails in the bottom");
+                }
+        }
+        ?>
 <!DOCTYPE html>
-<html lang='en'>
+<html lang="en">
+
 <head>
-<meta charset='UTF-8'>
-<meta http-equiv='X-UA-Compatible' content='IE=edge'>
-<meta name='viewport' content='width=device-width, initial-scale=1.0'>
-<link href="https://fonts.googleapis.com/css2?family=Konkhmer+Sleokchher&family=Outfit:wght@300&display=swap" rel="stylesheet">
-<link rel='stylesheet' href='style.css'>
-<title>ALEX</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="styling.css">
+    <title>ALEX</title>
 </head>
 
 <body>
-    <header>
-        <h1><a href="index.html" style="text-decoration: none; color: #fff;">ALEX</a></h1>
-        <nav>
-            <ul>
-                <li><a href="about.html">About Me</a></li>
-                <li><a href="projects.html">My Works</a></li>
-                <li><a href="contacts.html">Contacts</a></li>
-            </ul>
-        </nav>
+
+    <nav>
+        <div class="nav-logo">
+            <h2><a href="#">
+                ALEX
+            </a></h2>
+        </div>
+
+        <ul class="nav-links">
+            <li class="link"><a href="#">Home</a></li>
+            
+            <li id="link1" class="link"><a href="#">How I'm Different</a></li>
+            <li id="link2" class="link"><a href="#">My Projects</a></li>
+        </ul>
+        <a class="btn" href="#footer" class="link">Contact Me</a>
+    </nav>
+
+    <header class="container">
+        <div class="content">
+            <span class="blur"></span>
+            <span class="blur"></span>
+            <h4>I CODE WEBSITES LIKE A PRO.</h4>
+            
+            <H1>
+                
+            Hi, I'm <span>Alex</span> a,
+                <br>
+                <span>Full-stack Developer.
+    
+            </H1>
+            <p>
+                 I am an experienced full-stack developer with a passion for coding beautiful and functional websites. While I usually create websites from scratch, my expertise is in developing pre-designed websites. I love taking beautiful designs and turning them into functional, user-friendly digital websites.
+            </p>
+            <button class="btn">Get Started</button>
+        </div>
+        <div class="image">
+            <img src="me.svg" alt="Alex (me :D) Coding">
+        </div>
     </header>
 
-    <section id="hero">
-        <div class="hero-content">
-          <h1>I'm <span>ALEX</span>,</h1>
-          <p>a 12-year-old full-stack developer</p>
-          <a href="#about" class="btn">Get to Know Me</a>
-        </div>
-      </section>
-      
-
-    <section id="about">
-        <h2>About Me</h2>
-        <p>
-            Hello! I'm a 12-year-old full-stack developer passionate about web development. I specialize in front-end work and have
-            experience with HTML, CSS, JavaScript, Go, Swift, and PHP. I'm constantly learning and eager to take on new challenges.
-        </p>
-        <a href="about.html" id="about">Learn More</a>
-    </section>
-
-    <h2 style="margin-left: 40px;">My Works</h2>
-
-    <section id="projects" class="project-grid">
-    
-        <div class="project">
-            <h3>Fast and Heathty Food Delivery</h3>
-            <a href="https://fhfooddelivery.netlify.app">Link to the project</a>
-        </div>
-        <div class="project">
-            <h3>The Daily News Hub</h3>
-            <a href="https://thedaliynewshub.netlify.app">Link to the project</a>
-        </div>
-    
-        <div class="project">
-            <h3>The Power Tournament</h3>
-            <a href="https://thepowertournament.netlify.app">Link to the project</a>
+    <section class="bg2">
+    <section class="container">
+        <h2 class="header">How I'm Different</h2>
+        <div class="features">
+            <div class="card">
+                <span><i class="fa-solid fa-clock"></i></span>
+                <h4>On Time</h4>
+                <p>
+                    I am always on time, and check my emails and messages often.
+                </p>
+            </div>
+            <div class="card">
+                <span><i class="fa-solid fa-book"></i></span>
+                <h4>Always Learning</h4>
+                <p>
+                    I am always learning new things to add to my portfolio.
+                </p>
+            </div>
+            <div class="card">
+                <span><i class="fa-solid fa-layer-group"></i></span>
+                <h4>Full-Stack Expert</h4>
+                <p>
+                    I am not only really good at developing and designing websites, I do the back-end too!
+                </p>
+            </div>
+            <div class="card">
+                <span><i class="fa-solid fa-folder-open"></i></span>
+                <h4>Everything You Need</h4>
+                <p>
+                    I am everything and more, reach out to me to find out more.
+                </p>
+            </div>
         </div>
     </section>
     
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <p>If you'd like to get in touch, feel free to reach out to me:</p>
-        <ul>
-            <li>Email: <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox?compose=GTvVlcSPFqsjVngDxFzklpzKPScjhkJCRglCplbhfvpQKDrHcDsJTXtPXNjKZLNppGnRHtpfvdztB">thisisnotmyrealfaceoo0@gmail.com</a></li>
-            <li>Github: <a href="https://github.com/alexthycoolest">AlexThyCoolest</a></li>
-            <li><a href="contacts.html">Veiw More</a></li>
-        </ul>
+    <section class="container">
+        <h2 class="header">Languages I Know:</h2>
+        
+            <div class="pricing">
+            <div class="card">
+                <div class="content">
+                    <h3>Front-End</h3>
+                    <p class="tag">
+                        <i class="ri-checkbox-circle-line"></i>
+                        HTML
+                    </p>
+                    <p class="tag">
+                        <i class="ri-checkbox-circle-line"></i>
+                        CSS
+                    </p>
+                    <p class="tag">
+                        <i class="ri-checkbox-circle-line"></i>
+                        JS
+                    </p>
+                    
+                    <p class="tag">
+                        <i class="ri-checkbox-circle-line"></i>
+                        SCSS/SASS
+                    </p>
+                    <p class="tag">
+                        <i class="ri-checkbox-circle-line"></i>
+                        React.JS
+                    </p>
+                    <p class="tag">
+                        <i class="ri-checkbox-circle-line"></i>
+                        JQuery
+                    </p>
+                </div>
+            </div>
+            </div>
+            
+            <div class="pricing">
+            <div class="card">
+                <div class="content">
+                    <h3>Back-End</h3>
+                    <p class="tag">
+                        <i class="ri-checkbox-circle-line"></i>
+                        PHP
+                    </p>
+                    <p class="tag">
+                        <i class="ri-checkbox-circle-line"></i>
+                        MySQL
+                    </p>
+                    <p class="tag">
+                        <i class="ri-checkbox-circle-line"></i>
+                        Python
+                    </p>
+                    
+                    <p class="tag">
+                        <i class="ri-checkbox-circle-line"></i>
+                        JAVA
+                    </p>
+                </div>
+            </div>
+            </div>
+            
+            <div class="pricing">
+            <div class="card">
+                <div class="content">
+                    <h3>Apps I use:</h3>
+                    <p class="tag">
+                        <i class="ri-checkbox-circle-line"></i>
+                        Git
+                    </p>
+                    <p class="tag">
+                        <i class="ri-checkbox-circle-line"></i>
+                        MAMP
+                    </p>
+                    <p class="tag">
+                        <i class="ri-checkbox-circle-line"></i>
+                        Visual Studio Code Editor
+                    </p>
+                </div>
+            </div>
+        </div>
+        
     </section>
     
+    <section class="container">
+        <h2 class="header">My Projects</h2>
+        <div class="pricing">
+            <div class="card">
+                <div class="content">
+        <h3>Front-End</h3>
+                    <p class="tag">
+                        <i class="ri-checkbox-circle-line"></i>
+                        HTML
+                    </p>
+                    <p class="tag">
+                        <i class="ri-checkbox-circle-line"></i>
+                        CSS
+                    </p>
+                    <p class="tag">
+                        <i class="ri-checkbox-circle-line"></i>
+                        JS
+                    </p>
+                    
+                    <p class="tag">
+                        <i class="ri-checkbox-circle-line"></i>
+                        SCSS/SASS
+                    </p>
+                    <p class="tag">
+                        <i class="ri-checkbox-circle-line"></i>
+                        React.JS
+                    </p>
+                    <p class="tag">
+                        <i class="ri-checkbox-circle-line"></i>
+                        JQuery
+                    </p>
+                    </div>
+            </div>
+        
+        <div class="pricing">
+            <div class="card">
+                <div class="content">
+                    <h3>Back-End</h3>
+                    <p class="tag">
+                        <i class="ri-checkbox-circle-line"></i>
+                        PHP
+                    </p>
+                    <p class="tag">
+                        <i class="ri-checkbox-circle-line"></i>
+                        MySQL
+                    </p>
+                    <p class="tag">
+                        <i class="ri-checkbox-circle-line"></i>
+                        Python
+                    </p>
+                    
+                    <p class="tag">
+                        <i class="ri-checkbox-circle-line"></i>
+                        JAVA
+                    </p>
+                </div>
+            </div>
+
+            
+            <div class="card">
+                <div class="content">
+                    <h3>Apps I use:</h3>
+                    <p class="tag">
+                        <i class="ri-checkbox-circle-line"></i>
+                        Git
+                    </p>
+                    <p class="tag">
+                        <i class="ri-checkbox-circle-line"></i>
+                        MAMP
+                    </p>
+                    <p class="tag">
+                        <i class="ri-checkbox-circle-line"></i>
+                        Visual Studio Code Editor
+                    </p>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <section class="container">
+        <h2 class="header">My Projects</h2>
+        <div class="pricing">
+            <div class="card">
+                <div class="content">
+                    <h3>Afrosoft</h3>
+                    <p>Afrosoft is a digital solutions company committed to helping businesses achieve growth and success in the online space.</p>
+                    <h4>The languages I used:</h4>
+                    <p class="tag">
+                        <i class="ri-checkbox-circle-line"></i>
+                        HTML
+                    </p>
+                    <p class="tag">
+                        <i class="ri-checkbox-circle-line"></i>
+                        CSS
+                    </p>
+                    <p class="tag">
+                        <i class="ri-checkbox-circle-line"></i>
+                        JS
+                    </p>
+                </div>
+                <br>
+                <div class="btns">
+                <a class="btn" href="https://afrosoft.netlify.app" target="_blank">Live Server</a><a class="btn" href="https://github.com/AlexThyCoolest/afrosoft" target="_blank">Github</a>
+                </div>
+            </div>
+
+            
+            <div class="card">
+                <div class="content">
+                    <h3>Phemy</h3>
+                    <p>Phemy is a cryptocurrency platform focused on AI to provide the best trading experienced. <strong>It is currently a work in progress</strong>.</p>
+<h4>The languages I used:</h4>
+                    <p class="tag">
+                        <i class="ri-checkbox-circle-line"></i>
+                        HTML
+                    </p>
+                    <p class="tag">
+                        <i class="ri-checkbox-circle-line"></i>
+                        CSS
+                    </p>
+                    <p class="tag">
+                        <i class="ri-checkbox-circle-line"></i>
+                        JS
+                    </p>
+                </div>
+                                <div class="btns">
+                <a class="btn" href="https://phemycrypto.netlify.app" target="_blank">Live Server</a>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <footer class="container" id="footer">
+        <span class="blur"></span>
+        <span class="blur"></span>
+        <div class="column">
+            <div class="nav-logo">
+            <h2><a href="#">
+                ALEX
+            </a></h2>
+        </div>
+            <p>
+                Contact Me
+            </p>
+            <div class="socials">
+                <a href="https://www.youtube.com/channel/UCRv9Mn_msloRYmyahAEMqHw" target="_blank"><i class="ri-youtube-line"></i></a>
+                <a href="https://dribbble.com/AlexTheDev01" target="_blank"><i class="fa-brands fa-dribbble"></i></a>
+            </div>
+            
+            <formaction="sent.html" action="index.php" class="contact-form" name="contact-form" method="post">
+                <input type="text" placeholder="Your Name" name="name" class="form-input">
+                <input type="email" placeholder="Your Email" name="email" class="form-input">
+                <textarea placeholder="Your Message" name="message" class="form-textarea"></textarea>
+                <input type="submit" value="Submit" class="form-submit">
+            </form>
+
+        </div>
+        <div class="column">
+            <h4>More Projects</h4>
+            <a href="https://catchthattwurkey.netlify.app/" target="_blank">Catch That Twurkey!</a>
+            <a href="https://phemy.netlify.app/" target="_blank">Phemy</a>
+            <a href="https://fhfooddelivery.netlify.app" target="_blank">F&F Delivery</a>
+        </div>
+        <div class="column">
+            <h4>About Me</h4>
+            <a href="#">My Blog</a>
+            <a href="#">Channel</a>
+            <a href="#">About Me</a>
+        </div>
+        <div class="column">
+            <h4>Contacts</h4>
+            <a href="#">Email</a>
+            <a href="#">Youtube</a>
+        </div>
+    </footer>
+    
+
+        </section>
+
+    <script src="script.js"></script>
+    <script
+  src="https://code.jquery.com/jquery-3.7.1.js"
+  integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+  crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/1.1.1/typed.min.js"></script>
 </body>
+
 </html>
